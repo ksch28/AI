@@ -26,3 +26,13 @@ nvidia-smi<br/>
 sudo kill -9 (메모리 주소) <br/>
 3. 실시간 gpu 메모리 확인<br/>
 watch -n 1 nvidia-smi<br/>
+4. Tensorflow GPU 사용 제한
+```python
+import tensorflow as tf
+config = tf.compat.v1.ConfigProto(
+gpu_options=tf.compat.v1.GPUOptions(
+    per_process_gpu_memory_fraction=0.8
+))
+        
+sess = tf.compat.v1.Session(config=config)
+```
