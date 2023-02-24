@@ -36,3 +36,8 @@ gpu_options=tf.compat.v1.GPUOptions(
         
 sess = tf.compat.v1.Session(config=config)
 ```
+5. Tensorflow warning 무시
+```python
+from silence_tensorflow import silence_tensorflow
+silence_tensorflow()
+```
